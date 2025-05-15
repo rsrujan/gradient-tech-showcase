@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Download, Github } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -37,6 +38,10 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.15),transparent_50%)]" />
       <div className="container mx-auto px-4 sm:px-6 z-10 opacity-0 transition-opacity duration-1000">
         <div className="max-w-3xl mx-auto text-center">
+          <Avatar className="h-28 w-28 mx-auto mb-6 ring-2 ring-purple-500/30 ring-offset-2 ring-offset-background">
+            <AvatarImage src="/lovable-uploads/bb7104f0-1d76-4755-b362-eacf4d81221a.png" alt="R Srujan" className="object-cover" />
+            <AvatarFallback className="text-lg font-medium">RS</AvatarFallback>
+          </Avatar>
           <p className="text-blue-400 font-medium mb-3 tracking-wider">
             WELCOME TO MY PORTFOLIO
           </p>
