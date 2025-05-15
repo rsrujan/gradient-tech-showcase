@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export default function About() {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -40,6 +41,30 @@ export default function About() {
           <div className="w-20 h-1 bg-gradient-primary mb-8"></div>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
+            <div className="lg:col-span-1 flex flex-col items-center">
+              <div className="relative w-52 h-52 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 rounded-2xl blur-md opacity-70 -z-10 animate-pulse"></div>
+                <div className="w-full h-full overflow-hidden rounded-2xl border-2 border-purple-500/20">
+                  <img 
+                    src="/lovable-uploads/8718132a-fe9c-477a-9feb-124d3f59241e.png" 
+                    alt="R Srujan" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="bg-dark-accent border border-gray-800 rounded-lg p-6 flex flex-col items-center mt-4 w-full">
+                <div className="w-32 h-32 mb-4">
+                  <img 
+                    src="https://developers.google.com/static/profile/badges/community/innovators/cloud/2023/badge.svg" 
+                    alt="Google Cloud Innovators Badge" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <span className="text-center text-sm text-gray-400">Google Cloud Innovators Program Member</span>
+              </div>
+            </div>
+            
             <div className="lg:col-span-2">
               <Card className="bg-dark-accent border-none shadow-lg">
                 <CardContent className="p-6">
@@ -51,19 +76,6 @@ export default function About() {
                   </p>
                 </CardContent>
               </Card>
-            </div>
-            
-            <div className="flex justify-center">
-              <div className="bg-dark-accent border border-gray-800 rounded-lg p-6 flex flex-col items-center">
-                <div className="w-32 h-32 mb-4">
-                  <img 
-                    src="https://developers.google.com/static/profile/badges/community/innovators/cloud/2023/badge.svg" 
-                    alt="Google Cloud Innovators Badge" 
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <span className="text-center text-sm text-gray-400">Google Cloud Innovators Program Member</span>
-              </div>
             </div>
           </div>
         </div>
