@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
@@ -15,7 +15,6 @@ export default function Contact() {
     email: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -48,17 +47,20 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitting(false);
-    }, 1500);
+    
+    // Create mailto link with form data
+    const subject = `Portfolio Contact from ${formData.name}`;
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+    const mailtoLink = `mailto:srujanr1011@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show toast notification
+    toast({
+      title: "Email client opened",
+      description: "Please send the email from your mail client to contact me.",
+    });
   };
 
   return (
@@ -79,7 +81,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <Card className="bg-dark border-none shadow-lg">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-white">
@@ -88,11 +90,11 @@ export default function Contact() {
                 <div className="space-y-4 mb-8">
                   <p className="text-gray-300">
                     <span className="font-medium text-white">Email:</span>{" "}
-                    johndoe@example.com
+                    srujanr1011@gmail.com
                   </p>
                   <p className="text-gray-300">
                     <span className="font-medium text-white">Location:</span>{" "}
-                    San Francisco, CA
+                    Centurion University
                   </p>
                   <p className="text-gray-300">
                     <span className="font-medium text-white">
@@ -106,7 +108,7 @@ export default function Contact() {
                 </h3>
                 <div className="flex gap-4">
                   <a
-                    href="mailto:johndoe@example.com"
+                    href="mailto:srujanr1011@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-dark-accent rounded-full hover:bg-gray-800 transition-colors"
@@ -115,7 +117,7 @@ export default function Contact() {
                     <Mail className="h-6 w-6" />
                   </a>
                   <a
-                    href="https://github.com/johndoe"
+                    href="https://github.com/rsrujan"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-dark-accent rounded-full hover:bg-gray-800 transition-colors"
@@ -124,13 +126,22 @@ export default function Contact() {
                     <Github className="h-6 w-6" />
                   </a>
                   <a
-                    href="https://linkedin.com/in/johndoe"
+                    href="https://linkedin.com/in/r-srujan"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-dark-accent rounded-full hover:bg-gray-800 transition-colors"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="h-6 w-6" />
+                  </a>
+                  <a
+                    href="https://twitter.com/rsrujan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-dark-accent rounded-full hover:bg-gray-800 transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <Twitter className="h-6 w-6" />
                   </a>
                 </div>
               </CardContent>
@@ -192,9 +203,8 @@ export default function Contact() {
                   <Button
                     type="submit"
                     className="w-full bg-gradient-primary hover:opacity-90 transition-opacity"
-                    disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    Send Message
                   </Button>
                 </form>
               </CardContent>

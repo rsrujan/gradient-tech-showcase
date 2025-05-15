@@ -1,7 +1,6 @@
 
 import React, { useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 
 interface Skill {
   name: string;
@@ -14,16 +13,10 @@ export default function Skills() {
   const [skills] = React.useState<Skill[]>([
     { name: "Python", level: 95, category: "programming" },
     { name: "TensorFlow", level: 90, category: "frameworks" },
-    { name: "PyTorch", level: 85, category: "frameworks" },
     { name: "Java", level: 80, category: "programming" },
-    { name: "JavaScript", level: 85, category: "programming" },
-    { name: "React", level: 80, category: "frameworks" },
-    { name: "SQL", level: 75, category: "programming" },
-    { name: "Docker", level: 70, category: "tools" },
-    { name: "AWS", level: 75, category: "tools" },
-    { name: "Git", level: 85, category: "tools" },
-    { name: "HTML/CSS", level: 90, category: "programming" },
-    { name: "Node.js", level: 75, category: "frameworks" },
+    { name: "HTML/CSS", level: 85, category: "programming" },
+    { name: "MySQL", level: 80, category: "programming" },
+    { name: "Google Cloud", level: 75, category: "tools" },
   ]);
 
   useEffect(() => {
@@ -91,11 +84,12 @@ export default function Skills() {
                                 <span className="text-gray-300">{skill.name}</span>
                                 <span className="text-gray-400">{skill.level}%</span>
                               </div>
-                              <Progress
-                                value={skill.level}
-                                className="h-2 bg-gray-700"
-                                indicatorClassName="bg-gradient-to-r from-purple-600 to-blue-500"
-                              />
+                              <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
+                                <div 
+                                  className="h-full bg-gradient-to-r from-purple-400 to-pink-600 rounded-full"
+                                  style={{ width: `${skill.level}%` }}
+                                ></div>
+                              </div>
                             </div>
                           ))}
                       </div>

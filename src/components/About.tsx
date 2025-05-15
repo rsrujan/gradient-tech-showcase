@@ -39,45 +39,30 @@ export default function About() {
           </h2>
           <div className="w-20 h-1 bg-gradient-primary mb-8"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
+            <div className="lg:col-span-2">
               <Card className="bg-dark-accent border-none shadow-lg">
                 <CardContent className="p-6">
-                  <p className="text-gray-300 mb-4">
-                    Hello! I'm a passionate AI and Machine Learning enthusiast with a strong foundation in software
-                    development. I specialize in building intelligent systems and applications that solve real-world problems.
-                  </p>
-                  <p className="text-gray-300 mb-4">
-                    With a background in Computer Science from MIT, I've spent the last few years exploring the
-                    intersection of artificial intelligence and practical applications. My work spans from natural language
-                    processing to computer vision projects.
+                  <p className="text-gray-300 mb-6">
+                    I am a B.Tech CSE student from Centurion University (Class of 2026), passionate about machine learning, artificial intelligence, and contributing to open source projects. I enjoy solving complex problems and building applications that make a positive impact on society. My focus is on developing AI solutions that address real-world challenges in areas such as healthcare, environment, and education.
                   </p>
                   <p className="text-gray-300">
-                    When I'm not coding, you can find me contributing to open-source projects, writing technical
-                    articles, or exploring the latest advancements in the field of AI. I'm always looking for new
-                    challenges and opportunities to grow.
+                    Through continuous learning and experimentation, I strive to stay at the forefront of AI technology trends and best practices. I am committed to creating ethical and responsible AI systems that are both innovative and accessible to all.
                   </p>
                 </CardContent>
               </Card>
             </div>
             
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-white">Education</h3>
-                <p className="text-gray-300">MSc in Artificial Intelligence, MIT (2021-2023)</p>
-                <p className="text-gray-300">BSc in Computer Science, Stanford University (2017-2021)</p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-white">Experience</h3>
-                <p className="text-gray-300">Machine Learning Engineer at Tech Innovations (2023-Present)</p>
-                <p className="text-gray-300">AI Research Intern at Google AI (Summer 2022)</p>
-                <p className="text-gray-300">Software Developer at Microsoft (2021-2022)</p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-white">Research Interests</h3>
-                <p className="text-gray-300">Deep Learning, Computer Vision, Natural Language Processing, Reinforcement Learning</p>
+            <div className="flex justify-center">
+              <div className="bg-dark-accent border border-gray-800 rounded-lg p-6 flex flex-col items-center">
+                <div className="w-32 h-32 mb-4">
+                  <img 
+                    src="https://developers.google.com/static/profile/badges/community/innovators/cloud/2023/badge.svg" 
+                    alt="Google Cloud Innovators Badge" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <span className="text-center text-sm text-gray-400">Google Cloud Innovators Program Member</span>
               </div>
             </div>
           </div>

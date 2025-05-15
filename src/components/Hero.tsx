@@ -1,8 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { ArrowDown, Download, Github } from "lucide-react";
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -38,37 +37,25 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.15),transparent_50%)]" />
       <div className="container mx-auto px-4 sm:px-6 z-10 opacity-0 transition-opacity duration-1000">
         <div className="max-w-3xl mx-auto text-center">
-          <Avatar className="h-32 w-32 mx-auto mb-6 border-2 border-purple-500 shadow-lg">
-            <AvatarImage src="/lovable-uploads/bb7104f0-1d76-4755-b362-eacf4d81221a.png" alt="Profile" />
-            <AvatarFallback className="bg-purple-700">JD</AvatarFallback>
-          </Avatar>
           <p className="text-blue-400 font-medium mb-3 tracking-wider">
             WELCOME TO MY PORTFOLIO
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
             <span className="inline-block gradient-text animate-gradient-x">
-              John Doe
+              R Srujan
             </span>
           </h1>
-          <h2 className="text-xl md:text-2xl text-gray-300 mb-8">
-            AI & Machine Learning Enthusiast
+          <h2 className="text-xl md:text-2xl text-gray-300 mb-4">
+            AI Developer & Machine Learning Enthusiast
           </h2>
+          <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+            Passionate about artificial intelligence, machine learning, and contributing to open source projects. 
+            Building innovative solutions to real-world problems through code.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-gradient-primary hover:opacity-90 transition-opacity"
-              onClick={() => {
-                document.querySelector("#contact")?.scrollIntoView({
-                  behavior: "smooth"
-                });
-              }}
-            >
-              Get In Touch
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="gradient-border"
+              className="bg-gradient-primary hover:opacity-90 transition-opacity flex gap-2"
               asChild
             >
               <a
@@ -76,7 +63,23 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View Resume
+                <Download className="h-5 w-5" />
+                Download Resume
+              </a>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="gradient-border flex gap-2"
+              asChild
+            >
+              <a
+                href="https://github.com/rsrujan"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-5 w-5" />
+                Visit GitHub
               </a>
             </Button>
           </div>
