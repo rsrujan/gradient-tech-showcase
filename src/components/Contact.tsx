@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
@@ -88,7 +88,7 @@ export default function Contact() {
                 <div className="space-y-4 mb-8">
                   <p className="text-gray-300">
                     <span className="font-medium text-white">Email:</span>{" "}
-                    hello@example.com
+                    johndoe@example.com
                   </p>
                   <p className="text-gray-300">
                     <span className="font-medium text-white">Location:</span>{" "}
@@ -106,28 +106,31 @@ export default function Contact() {
                 </h3>
                 <div className="flex gap-4">
                   <a
-                    href="https://github.com/username"
+                    href="mailto:johndoe@example.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-dark-accent rounded-full hover:bg-gray-800 transition-colors"
+                    aria-label="Email"
+                  >
+                    <Mail className="h-6 w-6" />
+                  </a>
+                  <a
+                    href="https://github.com/johndoe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-dark-accent rounded-full hover:bg-gray-800 transition-colors"
+                    aria-label="GitHub"
                   >
                     <Github className="h-6 w-6" />
                   </a>
                   <a
-                    href="https://linkedin.com/in/username"
+                    href="https://linkedin.com/in/johndoe"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-dark-accent rounded-full hover:bg-gray-800 transition-colors"
+                    aria-label="LinkedIn"
                   >
                     <Linkedin className="h-6 w-6" />
-                  </a>
-                  <a
-                    href="https://twitter.com/username"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-dark-accent rounded-full hover:bg-gray-800 transition-colors"
-                  >
-                    <Twitter className="h-6 w-6" />
                   </a>
                 </div>
               </CardContent>
