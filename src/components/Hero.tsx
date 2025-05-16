@@ -36,9 +36,30 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-dark-accent opacity-40 z-0" />
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.15),transparent_50%)]" />
+      <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.1),transparent_50%)]" />
+      
+      {/* Animated particles */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {[...Array(5)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute rounded-full bg-purple-500/10 animate-pulse"
+            style={{
+              width: `${Math.random() * 200 + 50}px`,
+              height: `${Math.random() * 200 + 50}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${Math.random() * 10 + 5}s`,
+              opacity: Math.random() * 0.3,
+            }}
+          />
+        ))}
+      </div>
+      
       <div className="container mx-auto px-4 sm:px-6 z-10 opacity-0 transition-opacity duration-1000">
         <div className="max-w-3xl mx-auto text-center">
-          <Avatar className="h-28 w-28 mx-auto mb-6 ring-2 ring-purple-500/30 ring-offset-2 ring-offset-background">
+          <Avatar className="h-28 w-28 mx-auto mb-6 ring-2 ring-purple-500/30 ring-offset-2 ring-offset-background animate-pulse">
             <AvatarImage src="/lovable-uploads/bb7104f0-1d76-4755-b362-eacf4d81221a.png" alt="R Srujan" className="object-cover" />
             <AvatarFallback className="text-lg font-medium">RS</AvatarFallback>
           </Avatar>
@@ -60,7 +81,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-gradient-primary hover:opacity-90 transition-opacity flex gap-2"
+              className="bg-gradient-primary hover:opacity-90 transition-opacity flex gap-2 transform hover:scale-105 transition-transform duration-300 shadow-lg"
               asChild
             >
               <a
@@ -75,7 +96,7 @@ export default function Hero() {
             <Button
               variant="outline"
               size="lg"
-              className="gradient-border flex gap-2"
+              className="gradient-border flex gap-2 transform hover:scale-105 transition-transform duration-300 shadow-lg"
               asChild
             >
               <a
@@ -90,11 +111,11 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-8 animate-bounce">
+      <div className="absolute bottom-8 animate-bounce z-10">
         <Button
           variant="ghost"
           size="icon"
-          className="rounded-full"
+          className="rounded-full bg-purple-500/10 hover:bg-purple-500/20 backdrop-blur-sm"
           onClick={() => {
             document.querySelector("#about")?.scrollIntoView({
               behavior: "smooth"
@@ -102,7 +123,7 @@ export default function Hero() {
           }}
           aria-label="Scroll Down"
         >
-          <ArrowDown className="h-6 w-6 text-gray-400" />
+          <ArrowDown className="h-6 w-6 text-gray-300" />
         </Button>
       </div>
     </section>

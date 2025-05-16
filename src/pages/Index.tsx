@@ -34,6 +34,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-dark text-white">
+      {/* Background elements */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.07),transparent_70%)]"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05),transparent_70%)]"></div>
+      </div>
+      
       <Navbar />
       <Hero />
       <About />

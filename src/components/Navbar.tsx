@@ -13,7 +13,7 @@ const NavLink = ({ href, title, onClick }: NavLinkProps) => {
   return (
     <a
       href={href}
-      className="text-gray-300 hover:text-white transition-colors px-4 py-2"
+      className="text-gray-300 hover:text-white transition-colors px-4 py-2 hover:bg-white/5 rounded-md"
       onClick={(e) => {
         e.preventDefault();
         document.querySelector(href)?.scrollIntoView({
@@ -58,7 +58,7 @@ export default function Navbar() {
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-black/80 backdrop-blur-md py-3 shadow-lg"
+          ? "bg-black/80 backdrop-blur-md py-3 shadow-lg border-b border-white/5"
           : "bg-transparent py-5"
       }`}
     >
@@ -81,7 +81,7 @@ export default function Navbar() {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="md:hidden hover:bg-white/10"
           onClick={toggleMenu}
           aria-label="Menu"
         >
@@ -90,14 +90,14 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`fixed inset-0 bg-black/95 flex flex-col items-center justify-center z-50 transition-transform duration-300 ease-in-out ${
+          className={`fixed inset-0 bg-black/95 backdrop-blur-md flex flex-col items-center justify-center z-50 transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           } md:hidden`}
         >
           <Button
             variant="ghost"
             size="icon"
-            className="absolute top-4 right-4"
+            className="absolute top-4 right-4 hover:bg-white/10"
             onClick={toggleMenu}
             aria-label="Close Menu"
           >
