@@ -51,7 +51,7 @@ export default function Contact() {
     // Create mailto link with form data
     const subject = `Portfolio Contact from ${formData.name}`;
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    const mailtoLink = `mailto:srujanr1011@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:rsrujan1234@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
     // Open email client
     window.location.href = mailtoLink;
@@ -90,7 +90,7 @@ export default function Contact() {
                 <div className="space-y-4 mb-8">
                   <p className="text-gray-300">
                     <span className="font-medium text-white">Email:</span>{" "}
-                    srujanr1011@gmail.com
+                    rsrujan1234@gmail.com
                   </p>
                   <p className="text-gray-300">
                     <span className="font-medium text-white">Location:</span>{" "}
@@ -108,7 +108,7 @@ export default function Contact() {
                 </h3>
                 <div className="flex gap-4">
                   <a
-                    href="mailto:srujanr1011@gmail.com"
+                    href="mailto:rsrujan1234@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-dark-accent rounded-full hover:bg-gray-800 transition-colors"
